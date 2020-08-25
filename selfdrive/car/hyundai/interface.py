@@ -45,7 +45,7 @@ class CarInterface(CarInterfaceBase):
         ret.mass = 1830. + STD_CARGO_KG
         ret.wheelbase = 2.765
         # Values from optimizer
-        ret.steerRatio = 16.5  # 13.8 is spec end-to-end
+        ret.steerRatio = 16.5   # 13.8 is spec end-to-end
         ret.lateralTuning.pid.kiBP, ret.lateralTuning.pid.kpBP = [[0.], [0.]]
         ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.25], [0.05]]
       elif candidate == CAR.SORENTO:
