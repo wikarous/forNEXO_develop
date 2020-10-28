@@ -133,8 +133,8 @@ class CarState(CarStateBase):
         ret.gearShifter = GearShifter.park
       elif gear == 7:
         ret.gearShifter = GearShifter.reverse
-      else:
-        ret.gearShifter = GearShifter.unknown
+#      else:
+#        ret.gearShifter = GearShifter.unknown
     # Gear Selecton - This is not compatible with all Kia/Hyundai's, But is the best way for those it is compatible with
     else:
       gear = cp.vl["LVR12"]["CF_Lvr_Gear"]
@@ -348,7 +348,10 @@ class CarState(CarStateBase):
     elif CP.carFingerprint in FEATURES["use_elect_gears"]:
       signals += [
         ("Elect_Gear_Shifter", "ELECT_GEAR", 0),
-    ]
+      ]
+      checks += [
+        ("ELECT_GEAR", 20),
+      ]
     else:
       signals += [
         ("CF_Lvr_Gear","LVR12",0),
